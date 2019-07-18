@@ -97,9 +97,9 @@ sqlContext.sql("SELECT * FROM global_temp.global_records").show()
 # In[3]:
 
 
-airlinesPath="/home/cnk45874/demo/airlines.csv"
-flightsPath="/home/cnk45874/demo/flights.csv"
-airportsPath="/home/cnk45874/demo/airports.csv"
+airlinesPath="/home/demo/airlines.csv"
+flightsPath="/home/demo/flights.csv"
+airportsPath="/home/demo/airports.csv"
 
 
 # In[4]:
@@ -284,7 +284,7 @@ delay_per_airline.show(5)
 # In[33]:
 
 
-products = spark.read                .format("csv")                .option("header","true")                .load("/home/cnk45874/demo/products.csv")
+products = spark.read                .format("csv")                .option("header","true")                .load("/home/demo/products.csv")
 
 
 # In[34]:
