@@ -16,7 +16,7 @@ spark = SparkSession.builder                    .appName("Analyzing soccer playe
 # In[5]:
 
 
-players = spark.read              .format("csv")              .option("header","true")              .load("/home/cnk45874/demo/player.csv")
+players = spark.read              .format("csv")              .option("header","true")              .load("/home/demo/player.csv")
 
 
 # In[6]:
@@ -334,13 +334,13 @@ pa_2016.show(2)
 
 
 pa_2016.select("player_api_id","overall_rating")       .coalesce(1)\#creates single file  from all partitions
-       .write       .option("header","true")       .csv("/home/cnk45874/output/player_overall.csv")
+       .write       .option("header","true")       .csv("/home/output/player_overall.csv")
 
 
 # In[73]:
 
 
-pa_2016.select("player_api_id","overall_rating")       .write       .json("/home/cnk45874/output/player_overall.json")
+pa_2016.select("player_api_id","overall_rating")       .write       .json("/home/output/player_overall.json")
 
 
 # In[ ]:
