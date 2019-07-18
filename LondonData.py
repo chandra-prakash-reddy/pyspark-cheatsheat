@@ -16,7 +16,7 @@ spark=SparkSession.builder                  .appName("Analyzing London crime dat
 # In[5]:
 
 
-data=spark.read          .format("csv")          .option("header","true")          .load("/home/cnk45874/demo/airlines.csv")
+data=spark.read          .format("csv")          .option("header","true")          .load("/home/demo/airlines.csv")
 
 
 # In[6]:
