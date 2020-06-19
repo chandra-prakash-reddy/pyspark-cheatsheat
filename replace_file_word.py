@@ -1,7 +1,11 @@
 import fnmatch
 import os
+import sys
 
-with open('token', 'r') as token_file:
+token_path=str(sys.argv[1])
+directory_path=str(sys.argv[2])
+print('token_file : {} directory_path : {}'.format(token_path,directory_path))
+with open(token_path, 'r') as token_file:
     token = token_file.read()
 
 token = token.strip()
@@ -19,4 +23,4 @@ def find_replace(directory, find, replace, filePattern):
                 f.write(s)
 
 
-find_replace("./", "#vault_token#", token, "*.json")
+find_replace(directory_path, "#vault_token#", token, "*.json")
