@@ -3,7 +3,15 @@
 
 # In[1]:
 
-
+  def get_client(self):
+        """
+        This method will create mongo client
+        """
+        return MongoClient(self.host,
+                           username=self.username,
+                           password=self.password,
+                           authSource=self.database)
+    
 from pyspark.accumulators import AccumulatorParam
 
 
