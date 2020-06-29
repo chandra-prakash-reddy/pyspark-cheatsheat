@@ -2,6 +2,9 @@ import fnmatch
 import os
 from os import environ
 
+#context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+#context.Response.Headers.Add("Content-Security-Policy", "script-src *; " + "style-src *; ");
+#context.Response.Headers.Add("X-Xss-Protection", "1");
 
 def find_replace(directory, find, replace, filePattern):
     for path, dirs, files in os.walk(os.path.abspath(directory)):
