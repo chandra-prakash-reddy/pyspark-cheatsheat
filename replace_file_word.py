@@ -1,6 +1,6 @@
 import fnmatch
 import os
-import argparse
+from os import environ
 
 
 def find_replace(directory, find, replace, filePattern):
@@ -21,12 +21,8 @@ def update_token_in_settings(token_path,directory_path):
 
     token = token.strip()
     token = token[2:token.__len__() - 2]
-
     find_replace(directory_path, "#vault_token#", token, "*.json")
 
 
-parser = argparse.ArgumentParser(description='replace vault token')
-parser.add_argument('--t', help='provide token_file_name')
-parser.add_argument('--d', help='directory_path of settings json')
-args = parser.parse_args()
-update_token_in_settings(str(args.t),str(args.d))
+
+update_token_in_settings(str(environ.get('token_file')),str(environ.get('directory_path')))
